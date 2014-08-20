@@ -109,10 +109,10 @@ gulp.task('scripts:dist', function() {
 
 // STYLES
 //
-<% if (props.cssPreprocessor === 'less') { %>var less = require('gulp-less');
 var prefix = require('gulp-autoprefixer');
 var combine = require('stream-combiner');
 var chalk = require('chalk');
+<% if (props.cssPreprocessor === 'less') { %>var less = require('gulp-less');
 gulp.task('styles:src', function() {
   var safeLess = combine(less());
   safeLess.on('error', function(err) {
@@ -130,8 +130,7 @@ gulp.task('styles:dist', function() {
     .pipe(less())
     .pipe(prefix('last 1 version', '> 1%', 'ie 8'))
     .pipe(gulp.dest(paths.tmp));
-});<% } else { %>var prefix = require('gulp-autoprefixer');
-gulp.task('styles:src', function() {
+});<% } else { %>gulp.task('styles:src', function() {
   return gulp.src(paths.styles, {cwd: paths.src, base: paths.src})
     .pipe(changed(paths.tmp))
     .pipe(prefix('last 1 version'))
