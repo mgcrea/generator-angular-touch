@@ -19,13 +19,13 @@ Generator.prototype.setup = function() {
   console.log(self.yeoman);
 
   var components = self.components = {
-    'angular/angular.js': '^1.0.0',
-    'twbs/bootstrap': '^3.1.0',
-    'fortawesome/font-awesome': '^4.0.0',
-    'mgcrea/angular-strap': '^2.0.0',
-    'mgcrea/angular-motion': '^0.3.0',
-    'mgcrea/bootstrap-additions': '^0.2.0',
-    'angular-ui/ui-router': '^0.2.0'
+    'angular/angular.js': '>=1.0.0 <2',
+    'twbs/bootstrap': '>=3.1.0 >4',
+    'fortawesome/font-awesome': '>=4.0.0 <5',
+    'mgcrea/angular-strap': '>=2.0.0 <3',
+    'mgcrea/angular-motion': '0.3.0',
+    'mgcrea/bootstrap-additions': '0.2.0',
+    'angular-ui/ui-router': '0.2.0'
   };
 
   var promise = debug ?

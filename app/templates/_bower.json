@@ -23,7 +23,7 @@
   ],<% } %>
   "dependencies": {<% props.components.forEach(function(component) { %>
     "<%= component.split('/')[1] %>": "<%= components[component] %>",<% }); %><% props.ngModules.forEach(function(module) { %>
-    "angular-<%= module %>": "^<%= props.ngVersion %>",<% }); %>
-    "angular": "^<%= props.ngVersion %>"
+    "angular-<%= module %>": ">=<%= props.ngVersion %> <<%= parseInt(props.ngVersion.substring(0,1))+1 %>",<% }); %>
+    "angular": ">=<%= props.ngVersion %> <<%= parseInt(props.ngVersion.substring(0,1))+1 %>"
   }
 }
